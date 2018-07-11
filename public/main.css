@@ -1,0 +1,54 @@
+body{
+    background: purple;
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+#chat{
+    max-width: 600px;
+    margin: 30px auto;
+    border: 1px solid white ;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, .5)
+
+}
+
+#ventana{
+    padding: 14px 0;
+    margin: 0 20px;
+    border: 1px solid white ;
+    color: white;
+}
+
+#output p{
+color: black;
+padding: 14px 0;
+margin: 0 20px;
+font-family: 'Righteous', cursive;
+}
+
+#actions p{
+ padding: 14px 0;
+ margin: 0 20px;
+ color: aquamarine;
+}
+
+input{
+    padding: 10px 15px ;
+    margin: 10px 0;
+    border: 0;
+    box-sizing: border-box;
+    background: #eee;
+    display: block;
+    width: 100%;
+}
+
+button{
+    padding: 12px 5px ;
+    margin: 3px 0;
+    border: 0;
+    background: #eee;
+    font-size: 18px;
+    font-family: 'Righteous', cursive;
+    width: 100%;
+}
+
