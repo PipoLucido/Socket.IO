@@ -7,8 +7,9 @@ const express = require('express');
 const app = express();
 
 app.use(express.static(path.join(__dirname,'/public')));
+app.use(express.json());
 
-const server = app.listen(3000,()=>{
+const server = app.listen(80,()=>{
     console.log('Server on port 3000')});
 //conf servidor
 
@@ -22,17 +23,17 @@ io.on('connection',(socket)=>{
   
     socket.on('storeClientInfo',(datos)=>{
         //store id para mapear notificacion
-        console.log('new conection stablish',socket.id);
-        console.log(datos)
+        //console.log('new conection stablish',socket.id);
+        //console.log(datos)
         new_clients_conected = { id_socket: socket.id , sucursal_id : datos.sucursal_id }
         clients_conected.push(new_clients_conected)
     });
     
     socket.on("disconnect", (datos) => {
 
-        console.log('client desconected!')
-        console.log(socket.id); 
-        console.log(clients_conected)
+        //console.log('client desconected!')
+        //console.log(socket.id); 
+        //console.log(clients_conected)
         clients_conected.map(function(clients,index){
 
             if(clients.id_socket == socket.id){
@@ -53,11 +54,11 @@ io.on('connection',(socket)=>{
 //routes
 app.post('/notificacion_nueva',(req,res) => {
   
-    console.log("req:",req.body)
+    //console.log("req:",req.body)
 
     let datos = {
-        id_pedido:" username.value" ,
-        sucursal_id:"6652"
+        id_pedido: req.body.id_pedido ,
+        sucursal_id: req.body.sucursal_id
     }
 
     clients_conected.map(function(clients,index){
@@ -68,7 +69,7 @@ app.post('/notificacion_nueva',(req,res) => {
 
     })
 
-    console.log('>_ notificacion enviada!')
+    //console.log('>_ notificacion enviada!')
     res.send(JSON.stringify(">_ notificacion enviada!"));
 
 });
