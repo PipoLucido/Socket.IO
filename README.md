@@ -1,2 +1,2 @@
 # Socket.IO
-Chat
+Sistema de notificaciones push por POST a cliente
