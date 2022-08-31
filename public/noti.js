@@ -1,4 +1,4 @@
-const socket = io('https://notifications.habitueonline.com', { secure: true, reconnect: true, rejectUnauthorized: false });
+const socket = io('https://uri_remota_donde_corre_express', { secure: true, reconnect: true, rejectUnauthorized: false });
 
 //DOM elements
 let outputs = document.getElementById('output');
