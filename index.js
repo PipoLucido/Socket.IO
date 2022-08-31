@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname,'/public')));
 app.use(express.json());
 
 const server = app.listen(80,()=>{
-    console.log('Server on port 3000')});
+    console.log('Server on port 80')});
 //conf servidor
 
 //conf websocket

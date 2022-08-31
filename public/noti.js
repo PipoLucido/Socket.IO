@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io('https://notifications.habitueonline.com', { secure: true, reconnect: true, rejectUnauthorized: false });
 
 //DOM elements
 let outputs = document.getElementById('output');
